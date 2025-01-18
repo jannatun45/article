@@ -10,6 +10,26 @@ const data = [
     "updated_at": "2023-01-15T12:00:00Z"
   },
   {
+    "title": "penamaan cabang di git",
+    "path": "/penamaan-cabang-di-git", 
+    "publish_date": "2023-01-15",
+    "content": "Di dunia kreatif, sering kali kita mendengar tentang pentingnya inspirasi, referensi, dan riset. Setiap kata tersebut memiliki arti dan nilai tersendiri, dan meskipun tampaknya serupa, mereka memiliki makna yang sangat berbeda dalam proses mencipta.",
+    "tags": ["motivasi", "inspirasi", "riset", "tag3", "tag4"],
+    "category": "git",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
+    "title": "Cara bekerja dengan cabang di Git ",
+    "path": "/cara-bekerja-dengan-cabang-di-git", 
+    "publish_date": "2023-01-15",
+    "content": "Di dunia kreatif, sering kali kita mendengar tentang pentingnya inspirasi, referensi, dan riset. Setiap kata tersebut memiliki arti dan nilai tersendiri, dan meskipun tampaknya serupa, mereka memiliki makna yang sangat berbeda dalam proses mencipta.",
+    "tags": ["motivasi", "inspirasi", "riset", "tag3", "tag4"],
+    "category": "git",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
     "title": "Unicode",
     "path": "/unicode", 
     "publish_date": "2023-01-15",
