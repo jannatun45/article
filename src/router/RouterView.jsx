@@ -7,7 +7,7 @@ import CaraBekerjaDenganCabangDiGit from "../components/pages/CaraBekerjaDenganC
 import PenamaanCabangDiGit from "../components/pages/PenamaanCabangDiGit .jsx";
 // import PageContent from "../components/molecules/PageContents.jsx";
 import CategoryPage from "../components/pages/CategoryPage.jsx";
-import AddArticle from "../components/features/AddArticle.jsx";
+import AddArticle from "../components/article/AddArticle.jsx";
 
 function RouterView() {
   return (
