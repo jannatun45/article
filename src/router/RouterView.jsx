@@ -8,6 +8,7 @@ import PenamaanCabangDiGit from "../components/pages/PenamaanCabangDiGit .jsx";
 // import PageContent from "../components/molecules/PageContents.jsx";
 import CategoryPage from "../components/pages/CategoryPage.jsx";
 import AddArticle from "../components/article/AddArticle.jsx";
+import SetupAndConfigurasi from "../components/pages/bootcamp/SetupAndConfigurasi.jsx";
 
 function RouterView() {
   return (
@@ -20,6 +21,7 @@ function RouterView() {
         <Route path='/perbedaan-local-storage-dan-session-storage' element={<PerbedaanLocalStorageDanSessionStorage />}/>
         <Route path='/filosofi-dibalik-inspirasi-referency-dan-riset' element={<FilosofiDibalikInspirasiReferencyDanRiset />}/>
         <Route path='/flex-wrap-pada-tailwind' element={<FlexWrapPadaTailwind />}/>
+        <Route path='/setup-and-configurasi' element={<SetupAndConfigurasi />}/>
 
         {/* <Route path='/category/:categoryName' element={<PageContent />} /> */}
         <Route path='/category/:categoryName' element={<CategoryPage />} />
