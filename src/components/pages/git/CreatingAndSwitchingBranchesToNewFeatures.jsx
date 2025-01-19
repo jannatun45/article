@@ -1,10 +1,10 @@
 import { Icon } from '@iconify/react';
 
-const CaraBekerjaDenganCabangDiGit = () => {
+const CreatingAndSwitchingBranchesToNewFeatures = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
       {/* Judul Artikel */}
-      <h1 className="text-3xl font-semibold mb-6 text-center">Cara Bekerja dengan Cabang di Git: Membuat dan Berpindah Cabang untuk Fitur Baru</h1>
+      <h1 className="text-3xl font-semibold mb-6 text-center">Git: Membuat dan Berpindah Cabang untuk Fitur Baru</h1>
 
       {/* Paragraf Pembuka */}
       <p className="mb-4 text-lg">
@@ -100,4 +100,4 @@ const CaraBekerjaDenganCabangDiGit = () => {
   );
 };
 
-export default CaraBekerjaDenganCabangDiGit;
+export default CreatingAndSwitchingBranchesToNewFeatures;

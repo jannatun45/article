@@ -3,8 +3,8 @@ import FilosofiDibalikInspirasiReferencyDanRiset from '../components/pages/Filos
 import FlexWrapPadaTailwind from '../components/pages/FlaxWrapPadaTailwind.jsx';
 import PerbedaanLocalStorageDanSessionStorage from '../components/pages/PerbedaanLocalStorageDanSessionStorage.jsx';
 import UnicodeArticle from "../components/pages/Unicode.jsx";
-import CaraBekerjaDenganCabangDiGit from "../components/pages/CaraBekerjaDenganCabangDiGit .jsx";
-import PenamaanCabangDiGit from "../components/pages/PenamaanCabangDiGit .jsx";
+import CaraBekerjaDenganCabangDiGit from "../components/pages/git/CreatingAndSwitchingBranchesToNewFeatures.jsx";
+import PenamaanCabangDiGit from "../components/pages/git/PenamaanCabangDiGit .jsx";
 // import PageContent from "../components/molecules/PageContents.jsx";
 import CategoryPage from "../components/pages/CategoryPage.jsx";
 import AddArticle from "../components/article/AddArticle.jsx";

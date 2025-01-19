@@ -1,6 +1,23 @@
 import { Icon } from '@iconify/react';
+import FileTree from '../../atoms/FileTree';
+import CommandLineInstructions from '../../atoms/CommandLineInstructions';
 
 const SetupAndConfigurasi = () => {
+
+  const fileStructure = [
+    'pos-app/',
+    '├── bin/',
+    '│   └── www               # File untuk menjalankan server',
+    '├── node_modules/         # Folder berisi dependency',
+    '├── public/               # Folder untuk file statis seperti CSS, gambar, JS',
+    '├── routes/               # Folder untuk routing aplikasi',
+    '│   └── index.js          # File routing utama',
+    '├── views/                # Folder untuk template views',
+    '│   └── index.jade        # File view utama',
+    '├── app.js                # File konfigurasi utama aplikasi Express',
+    '├── package.json          # File konfigurasi proyek Node.js',
+    '└── .gitignore            # Daftar file/folder yang akan diabaikan oleh git'
+  ];
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
       {/* Judul Artikel */}
@@ -16,9 +33,10 @@ const SetupAndConfigurasi = () => {
       <p className="mb-4">
         Langkah pertama adalah menginstal Express Generator, sebuah alat bantu yang memungkinkan Anda membuat aplikasi Express dengan struktur folder yang sudah siap digunakan. Jalankan perintah berikut untuk menginstalnya secara global:
       </p>
-      <pre className="bg-gray-100 p-4 mb-4">
+      <CommandLineInstructions code='npm install -g express-generator'/>
+      {/* <pre className="bg-gray-100 p-4 mb-4">
         <code>npm install -g express-generator</code>
-      </pre>
+      </pre> */}
 
       {/* Langkah 2: Install Dependency */}
       <h2 className="text-2xl font-semibold mb-4">Langkah 2: Install Dependency</h2>
@@ -39,20 +57,7 @@ const SetupAndConfigurasi = () => {
       <p className="mb-4">
         Setelah aplikasi dasar dibuat, Anda mungkin ingin menyesuaikan struktur folder agar lebih sesuai dengan kebutuhan aplikasi POS. Berikut adalah struktur folder yang umum digunakan:
       </p>
-      <pre className="bg-gray-100 p-4 mb-4">
-        <code>pos-app/</code>
-        <code>├── bin/</code>
-        <code>│   └── www               # File untuk menjalankan server</code>
-        <code>├── node_modules/         # Folder berisi dependency</code>
-        <code>├── public/               # Folder untuk file statis seperti CSS, gambar, JS</code>
-        <code>├── routes/               # Folder untuk routing aplikasi</code>
-        <code>│   └── index.js          # File routing utama</code>
-        <code>├── views/                # Folder untuk template views</code>
-        <code>│   └── index.jade        # File view utama</code>
-        <code>├── app.js                # File konfigurasi utama aplikasi Express</code>
-        <code>├── package.json          # File konfigurasi proyek Node.js</code>
-        <code>└── .gitignore            # Daftar file/folder yang akan diabaikan oleh git</code>
-      </pre>
+      <FileTree fileStructure={fileStructure}/>
       <p className="mb-4">
         Anda bisa menambah folder seperti <code>models</code> dan <code>controllers</code> untuk memisahkan logika aplikasi POS lebih baik.
       </p>
