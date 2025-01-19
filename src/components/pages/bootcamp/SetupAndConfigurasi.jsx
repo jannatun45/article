@@ -4,7 +4,7 @@ import CommandLineInstructions from '../../atoms/CommandLineInstructions';
 
 const SetupAndConfigurasi = () => {
 
-  const fileStructure = [
+  const structurFolder = [
     'pos-app/',
     '├── bin/',
     '│   └── www               # File untuk menjalankan server',
@@ -34,20 +34,17 @@ const SetupAndConfigurasi = () => {
         Langkah pertama adalah menginstal Express Generator, sebuah alat bantu yang memungkinkan Anda membuat aplikasi Express dengan struktur folder yang sudah siap digunakan. Jalankan perintah berikut untuk menginstalnya secara global:
       </p>
       <CommandLineInstructions code='npm install -g express-generator'/>
-      {/* <pre className="bg-gray-100 p-4 mb-4">
-        <code>npm install -g express-generator</code>
-      </pre> */}
 
       {/* Langkah 2: Install Dependency */}
       <h2 className="text-2xl font-semibold mb-4">Langkah 2: Install Dependency</h2>
       <p className="mb-4">
         Setelah Express Generator terinstal, buat proyek baru dan install semua dependency yang dibutuhkan dengan menjalankan perintah berikut:
       </p>
-      <pre className="bg-gray-100 p-4 mb-4">
-        <code>express pos-app</code>
-        <code>cd pos-app</code>
-        <code>npm install</code>
-      </pre>
+
+      <CommandLineInstructions code='express --view=pug myapp' />
+      <CommandLineInstructions code='cd my-app'/>
+      <CommandLineInstructions code='npm install'/>
+
       <p className="mb-4">
         Perintah ini akan membuat folder baru bernama <code>pos-app</code> dan menginstal semua dependency yang tercantum di dalam file <code>package.json</code>.
       </p>
@@ -57,7 +54,7 @@ const SetupAndConfigurasi = () => {
       <p className="mb-4">
         Setelah aplikasi dasar dibuat, Anda mungkin ingin menyesuaikan struktur folder agar lebih sesuai dengan kebutuhan aplikasi POS. Berikut adalah struktur folder yang umum digunakan:
       </p>
-      <FileTree fileStructure={fileStructure}/>
+      <FileTree fileStructure={structurFolder}/>
       <p className="mb-4">
         Anda bisa menambah folder seperti <code>models</code> dan <code>controllers</code> untuk memisahkan logika aplikasi POS lebih baik.
       </p>
@@ -67,9 +64,9 @@ const SetupAndConfigurasi = () => {
       <p className="mb-4">
         Untuk memudahkan pengembangan, kita dapat menjalankan aplikasi Express dalam mode debug. Hal ini memungkinkan kita untuk melihat informasi lebih mendetail tentang apa yang terjadi di dalam aplikasi. Gunakan perintah berikut untuk menjalankan aplikasi dengan mode debug:
       </p>
-      <pre className="bg-gray-100 p-4 mb-4">
-        <code>DEBUG=pos-app:* npm start</code>
-      </pre>
+      
+      <CommandLineInstructions code='set DEBUG=express:* && nodemon start'/>
+
       <p className="mb-4">
         Anda juga dapat menambahkan skrip di <code>package.json</code> agar lebih mudah menjalankan aplikasi dalam mode debug:
       </p>
