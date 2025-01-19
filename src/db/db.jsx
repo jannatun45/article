@@ -30,7 +30,7 @@ const data = [
     "updated_at": "2023-01-15T12:00:00Z"
   },
   {
-    "title": "Cara bekerja dengan cabang di Git ",
+    "title": "Git: Membuat dan Berpindah Branch untuk Fitur Baru",
     "path": "/cara-bekerja-dengan-cabang-di-git", 
     "publish_date": "2023-01-15",
     "content": "Dalam pengembangan perangkat lunak, terutama ketika bekerja dalam tim, penggunaan sistem kontrol versi seperti Git sangat penting.",
