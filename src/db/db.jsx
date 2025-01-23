@@ -10,11 +10,31 @@ const data = [
     "updated_at": "2023-01-15T12:00:00Z"
   },
   {
+    "title": "vocabulary",
+    "path": "/vocabulary", 
+    "publish_date": "2023-01-15",
+    "content": "vocabulary.",
+    "tags": ["vocabulary"],
+    "category": "vocabulary",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
+    "title": "in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it",
+    "path": "/git-branch-switching", 
+    "publish_date": "2023-01-15",
+    "content": "in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it.",
+    "tags": ["warning"],
+    "category": "error",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
     "title": "02 setup dan configurasi",
     "path": "/setup-and-configurasi", 
     "publish_date": "2023-01-15",
     "content": "kita akan membahas cara membangun aplikasi Point of Sales (POS) sederhana menggunakan framework Express.js. Aplikasi POS ini akan mencatat transaksi penjualan dan menyediakan sistem untuk manajemen produk dan pembayaran.",
-    "tags": ["eduwork"],
+    "tags": ["eduwork", "express"],
     "category": "bootcamp",
     "created_at": "2023-01-01T10:00:00Z",
     "updated_at": "2023-01-15T12:00:00Z"
@@ -25,7 +45,7 @@ const data = [
     "publish_date": "2023-01-15",
     "content": "Penamaan cabang (branch) di Git adalah salah satu hal penting yang perlu diperhatikan dalam pengembangan perangkat lunak. Penamaan yang jelas dan konsisten akan memudahkan kolaborasi dalam tim serta membantu dalam melacak tujuan atau konteks dari perubahan yang sedang dikerjakan. ",
     "tags": ["tutorial", "branch"],
-    "category": "git",
+    "category": "GitHub",
     "created_at": "2023-01-01T10:00:00Z",
     "updated_at": "2023-01-15T12:00:00Z"
   },
@@ -35,7 +55,7 @@ const data = [
     "publish_date": "2023-01-15",
     "content": "Dalam pengembangan perangkat lunak, terutama ketika bekerja dalam tim, penggunaan sistem kontrol versi seperti Git sangat penting.",
     "tags": ["tutorial", "git"],
-    "category": "git",
+    "category": "GitHub",
     "created_at": "2023-01-01T10:00:00Z",
     "updated_at": "2023-01-15T12:00:00Z"
   },

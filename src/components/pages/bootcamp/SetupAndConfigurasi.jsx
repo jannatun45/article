@@ -1,6 +1,8 @@
 import { Icon } from '@iconify/react';
 import FileTree from '../../atoms/FileTree';
 import CommandLineInstructions from '../../atoms/CommandLineInstructions';
+import { Link } from 'react-router-dom';
+import Section from '../../atoms/Section';
 
 const SetupAndConfigurasi = () => {
 
@@ -10,16 +12,15 @@ const SetupAndConfigurasi = () => {
     '│   └── www               # File untuk menjalankan server',
     '├── node_modules/         # Folder berisi dependency',
     '├── public/               # Folder untuk file statis seperti CSS, gambar, JS',
-    '├── routes/               # Folder untuk routing aplikasi',
-    '│   └── index.js          # File routing utama',
     '├── views/                # Folder untuk template views',
     '│   └── index.jade        # File view utama',
+    '├── app.js                # File konfigurasi utama aplikasi Express',
     '├── app.js                # File konfigurasi utama aplikasi Express',
     '├── package.json          # File konfigurasi proyek Node.js',
     '└── .gitignore            # Daftar file/folder yang akan diabaikan oleh git'
   ];
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
+    <>
       {/* Judul Artikel */}
       <h1 className="text-3xl font-semibold mb-6 text-center">Membangun Aplikasi POS (Point of Sales) dengan Express.js</h1>
 
@@ -56,7 +57,7 @@ const SetupAndConfigurasi = () => {
       </p>
       <FileTree fileStructure={structurFolder}/>
       <p className="mb-4">
-        Anda bisa menambah folder seperti <code>models</code> dan <code>controllers</code> untuk memisahkan logika aplikasi POS lebih baik.
+        Anda bisa menambah folder seperti <code>models</code> dan <code>controllers</code> untuk memisahkan logika aplikasi POS lebih baik. dan untuk file app-nya anda bisa lihat <Link to="/setup-and-configurasi/app" className='hover:underline text-blue-800'>disini.</Link> 
       </p>
 
       {/* Langkah 4: Menjalankan Express dalam Mode Debug */}
@@ -86,7 +87,7 @@ const SetupAndConfigurasi = () => {
       <div className="text-center mt-8">
         <Icon icon="twemoji:computer" className="text-4xl text-blue-500" />
       </div>
-    </div>
+    </>
   );
 };
 
