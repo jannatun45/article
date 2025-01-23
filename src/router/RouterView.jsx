@@ -9,6 +9,9 @@ import PenamaanCabangDiGit from "../components/pages/git/PenamaanCabangDiGit .js
 import CategoryPage from "../components/pages/CategoryPage.jsx";
 import AddArticle from "../components/article/AddArticle.jsx";
 import SetupAndConfigurasi from "../components/pages/bootcamp/SetupAndConfigurasi.jsx";
+import GitBranchSwitching from "../components/pages/error/GitBranchSwitching.jsx";
+import AppExpress from "../components/atoms/AppExpress.jsx";
+import Vocabulary from "../components/pages/vocabulary/Vocabulary.jsx";
 
 function RouterView() {
   return (
@@ -16,12 +19,15 @@ function RouterView() {
       <Routes>
         <Route path='/' element={<AddArticle />}/>
         <Route path='/penamaan-cabang-di-git' element={<PenamaanCabangDiGit />}/>
+        <Route path='/vocabulary' element={<Vocabulary />}/>
+        <Route path='/git-branch-switching' element={<GitBranchSwitching />}/>
         <Route path='/unicode' element={<UnicodeArticle />}/>
         <Route path='/cara-bekerja-dengan-cabang-di-git' element={<CaraBekerjaDenganCabangDiGit />}/>
         <Route path='/perbedaan-local-storage-dan-session-storage' element={<PerbedaanLocalStorageDanSessionStorage />}/>
         <Route path='/filosofi-dibalik-inspirasi-referency-dan-riset' element={<FilosofiDibalikInspirasiReferencyDanRiset />}/>
         <Route path='/flex-wrap-pada-tailwind' element={<FlexWrapPadaTailwind />}/>
         <Route path='/setup-and-configurasi' element={<SetupAndConfigurasi />}/>
+        <Route path='/setup-and-configurasi/:id' element={<AppExpress />}/>
 
         {/* <Route path='/category/:categoryName' element={<PageContent />} /> */}
         <Route path='/category/:categoryName' element={<CategoryPage />} />
