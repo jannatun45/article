@@ -1,83 +1,106 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import data from "../../db/db"; // Import data artikel Anda
 import { useState, useEffect } from "react";
+
+// Fungsi untuk menyoroti teks yang cocok dengan query pencarian
+const highlightText = (text, query) => {
+  if (!query) return text;  // Jika tidak ada query, return teks asli
+  const regex = new RegExp(`(${query})`, 'gi'); // Mencocokkan query (case-insensitive)
+  const parts = text.split(regex); // Memecah teks berdasarkan query
+  return parts.map((part, index) =>
+    regex.test(part) ? <mark key={index} className="bg-yellow-300">{part}</mark> : part
+  );
+};
 
 function CategoryPage() {
   const { categoryName } = useParams();  // Ambil parameter kategori dari URL
   const [selectedTags, setSelectedTags] = useState([]);  // State untuk menyimpan tag yang dipilih
+  const [searchQuery, setSearchQuery] = useState('');  // State untuk pencarian
   const navigate = useNavigate();
 
   // Ambil parameter tag dari URL (dengan format ?tags=tag1&tags=tag2)
   const urlParams = new URLSearchParams(window.location.search);
   const tagsFromUrl = urlParams.getAll("tags");  // Ambil semua tag yang dipilih
 
-  // Menggunakan useEffect hanya saat komponen pertama kali di-mount
   useEffect(() => {
     if (tagsFromUrl.length > 0) {
       setSelectedTags(tagsFromUrl);  // Set selectedTags hanya sekali saat URL berubah
     }
   }, []);  // Hanya dipanggil sekali saat komponen pertama kali dimuat
 
-  // Filter artikel berdasarkan kategori dan tag yang dipilih
+  const isCategoryAll = categoryName === undefined || categoryName === "all";  // Jika tidak ada kategori di URL
+
+  // Filter artikel berdasarkan kategori, tag yang dipilih, dan pencarian
   const filteredData = data.filter(item => {
-    const isCategoryMatch = categoryName === 'all' || item.category === categoryName;
+    const isCategoryMatch = isCategoryAll || item.category === categoryName;
     const isTagMatch = selectedTags.length > 0 ? selectedTags.every(tag => item.tags.includes(tag)) : true;
-    return isCategoryMatch && isTagMatch;
+    const isSearchMatch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || item.content.toLowerCase().includes(searchQuery.toLowerCase());
+
+    return isCategoryMatch && isTagMatch && isSearchMatch;
   });
 
-  // Fungsi untuk menangani klik pada tag
   const handleTagClick = (tag) => {
     const updatedTags = selectedTags.includes(tag)
-      ? selectedTags.filter(t => t !== tag)  // Hapus tag jika sudah dipilih
-      : [...selectedTags, tag];  // Tambahkan tag jika belum dipilih
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
 
-    setSelectedTags(updatedTags);  // Update selectedTags
-
-    // Update URL dengan tag yang baru
+    setSelectedTags(updatedTags);
     const queryParams = new URLSearchParams();
-    updatedTags.forEach(tag => queryParams.append("tags", tag));  // Menambahkan semua tag ke URL
-    navigate(`?${queryParams.toString()}`);  // Mengubah URL
+    updatedTags.forEach(tag => queryParams.append("tags", tag));
+    navigate(`?${queryParams.toString()}`);
   };
 
-  // Menentukan pesan yang akan ditampilkan jika tidak ada artikel yang cocok
   let noDataMessage = "";
-  if (categoryName !== "all" && selectedTags.length === 0) {
-    // Jika kategori dipilih tanpa tag
+  if (categoryName && selectedTags.length === 0) {
     noDataMessage = "Artikel tidak ditemukan untuk kategori ini.";
-  } else if (categoryName !== "all" && selectedTags.length > 0) {
-    // Jika kategori dan tag dipilih
+  } else if (categoryName && selectedTags.length > 0) {
     noDataMessage = "Artikel tidak ditemukan untuk kategori ini dan tag yang dipilih.";
   }
 
+  const filteredTags = isCategoryAll
+    ? data.flatMap(item => item.tags)
+    : data.filter(item => item.category === categoryName).flatMap(item => item.tags);
+
+  const uniqueTags = [...new Set(filteredTags)];
+
   return (
     <div>
-      <h2 className="text-2xl font-bold">Kategori: {categoryName}</h2>
-      
-      {/* Menampilkan tag filter */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {data
-          .flatMap(item => item.tags) // Ambil semua tag dari artikel
-          .filter((tag, index, self) => self.indexOf(tag) === index) // Ambil tag unik
-          .map((tag, index) => (
-            <span
-              key={index}
-              onClick={() => handleTagClick(tag)}  // Klik tag untuk filter
-              className={`cursor-pointer bg-blue-200 text-blue-800 py-0.5 px-2 rounded-full text-xs ${selectedTags.includes(tag) ? 'bg-blue-400' : ''}`}
-            >
-              {tag}
-            </span>
-          ))}
+      <div className="mb-4">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          placeholder="Cari Artikel"
+          className="px-4 py-2 border rounded w-full"
+        />
       </div>
 
-      {/* Menampilkan artikel yang telah difilter */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {uniqueTags.map((tag, index) => (
+          <span
+            key={index}
+            onClick={() => handleTagClick(tag)}
+            className={`cursor-pointer bg-blue-200 text-blue-800 py-0.5 px-2 rounded-full text-xs ${selectedTags.includes(tag) ? 'bg-blue-400' : ''}`}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredData.length > 0 ? (
           filteredData.map(item => (
             <div key={item.path} className="max-w-xs rounded overflow-hidden px-6 py-3 shadow-lg bg-white">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
-                  <div className="font-semibold text-lg capitalize mb-2">{item.title}</div>
-                  <p className="text-gray-700 text-base">{item.content.substring(0, 100)}...</p>
+                  <div className="font-semibold text-lg capitalize mb-2">
+                    {/* Highlight title */}
+                    {highlightText(item.title, searchQuery)}
+                  </div>
+                  <p className="text-gray-700 text-base">
+                    {/* Highlight content */}
+                    {highlightText(item.content.substring(0, 100), searchQuery)}...
+                  </p>
                   <div className="text-sm text-gray-500">{item.publish_date}</div>
                 </div>
 
@@ -86,7 +109,7 @@ function CategoryPage() {
                     {item.tags.map((tag, index) => (
                       <span
                         key={index}
-                        onClick={() => handleTagClick(tag)}  // Klik tag untuk filter
+                        onClick={() => handleTagClick(tag)}
                         className={`cursor-pointer bg-blue-200 text-blue-800 py-0.5 px-2 rounded-full text-xs ${selectedTags.includes(tag) ? 'bg-blue-400' : ''}`}
                       >
                         {tag}
@@ -102,7 +125,7 @@ function CategoryPage() {
             </div>
           ))
         ) : (
-          <p>{noDataMessage}</p>
+          <p>{noDataMessage || "Tidak ada artikel yang ditemukan."}</p>
         )}
       </div>
     </div>

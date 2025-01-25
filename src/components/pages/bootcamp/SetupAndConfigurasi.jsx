@@ -20,7 +20,7 @@ const SetupAndConfigurasi = () => {
     '└── .gitignore            # Daftar file/folder yang akan diabaikan oleh git'
   ];
   return (
-    <>
+    <Section>
       {/* Judul Artikel */}
       <h1 className="text-3xl font-semibold mb-6 text-center">Membangun Aplikasi POS (Point of Sales) dengan Express.js</h1>
 
@@ -87,7 +87,7 @@ const SetupAndConfigurasi = () => {
       <div className="text-center mt-8">
         <Icon icon="twemoji:computer" className="text-4xl text-blue-500" />
       </div>
-    </>
+    </Section>
   );
 };
 
