@@ -1,5 +1,5 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import data from "../../db/db"; // Import data artikel Anda
+import data from "../../assets/databases"; // Import data artikel Anda
 import { useState, useEffect } from "react";
 
 // Fungsi untuk menyoroti teks yang cocok dengan query pencarian

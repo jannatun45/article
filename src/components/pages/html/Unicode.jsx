@@ -1,16 +1,52 @@
 import { Icon } from '@iconify/react';
+import Section from '../../atoms/Section';
+import H1 from '../../atoms/H1';
+import P from '../../atoms/P';
+import unicode from '../../../assets/databases/unicode';
+import Highlight from '../../atoms/Highlight';
 
 const UnicodeArticle = () => {
+
+
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
+    <Section>
       {/* Judul Artikel */}
-      <h1 className="text-3xl font-semibold mb-6 text-center">Pengenalan Unicode dan Pentingnya untuk Pengkodean Karakter</h1>
+      <H1>Unicode</H1>
 
       {/* Paragraf Pembuka */}
-      <p className="mb-4 text-lg">
-        Dalam dunia pengembangan perangkat lunak, pengkodean karakter memainkan peran penting dalam memfasilitasi komunikasi antara sistem komputer yang berbeda. Salah satu pengkodean karakter yang paling banyak digunakan adalah <strong>Unicode</strong>. Unicode adalah standar pengkodean karakter yang mencakup hampir semua karakter yang digunakan di seluruh dunia, termasuk simbol matematika, emoji, karakter dari berbagai bahasa, dan banyak lagi.
-      </p>
+      <P className="text-lg">
+      Berikut adalah beberapa contoh Unicode dan HTML Entity untuk karakter-karakter khusus yang sering digunakan, termasuk beberapa panah dan simbol lainnya
+      </P>
 
+      {
+        Object.keys(unicode).map((u, index)=> (
+          <div key={index} className='overflow-x-auto mb-6 text-sm'>
+            <table className='table-auto w-full border-separate border border-gray-800 rounded-lg'>
+              <thead>
+                <tr className='bg-gray-100'>
+                  <th className='border px-4 py-2 text-left'>Nama</th>
+                  <th className='border px-4 py-2 text-left'>Karakter</th>
+                  <th className='border px-4 py-2 text-left'>HTML Entity</th>
+                  <th className='border px-4 py-2 text-left'>Unicode Escape</th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                unicode[u].map((item, index) => (
+                <tr key={index}>
+                  <td className='border px-4 py-2'>{item.nama}</td>
+                  <td className='border px-4 py-2'>{item.karakter}</td>
+                  <td className='border px-4 py-2'><Highlight>{item.htmlEntity}</Highlight></td>
+                  <td className='border px-4 py-2'><Highlight>{item.unicodeEscape}</Highlight></td>
+                </tr>          
+                ))
+              }
+              </tbody>
+            </table>
+          </div>
+        ))
+      }
+      
       {/* Kutipan Pertama */}
       <blockquote className="italic text-gray-600 border-l-4 pl-4 mb-6 border-gray-400">
         "Unicode memungkinkan komputer untuk memahami dan menampilkan teks dalam hampir semua bahasa dunia."
@@ -53,7 +89,7 @@ const UnicodeArticle = () => {
       <div className="text-center mt-8">
         <Icon icon="twemoji:globe-with-meridians" className="text-4xl text-blue-500" />
       </div>
-    </div>
+    </Section>
   );
 };
 
