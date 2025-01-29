@@ -10,6 +10,46 @@ const data = [
     "updated_at": "2023-01-15T12:00:00Z"
   },
   {
+    "title": "shortcut in visual studio code",
+    "path": "/shortcut", 
+    "publish_date": "2023-01-15",
+    "content": "Tangga nada adalah urutan nada-nada dalam satu oktaf yang disusun secara teratur. Setiap tangga nada memiliki pola interval yang unik dan menciptakan nuansa musik yang berbeda. Artikel ini akan membahas beberapa jenis tangga nada yang sering digunakan dalam musik, seperti tangga nada mayor, minor, pentatonik, blues, dan kromatik.                   ",
+    "tags": ["shortcut"],
+    "category": "VSCode",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
+    "title": "Hydrate Fallback In SSR",
+    "path": "/hydrate-fallback-in-ssr", 
+    "publish_date": "2023-01-15",
+    "content": "Tangga nada adalah urutan nada-nada dalam satu oktaf yang disusun secara teratur. Setiap tangga nada memiliki pola interval yang unik dan menciptakan nuansa musik yang berbeda. Artikel ini akan membahas beberapa jenis tangga nada yang sering digunakan dalam musik, seperti tangga nada mayor, minor, pentatonik, blues, dan kromatik.                   ",
+    "tags": ["router"],
+    "category": "react",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
+    "title": "musical sclae",
+    "path": "/musical-scale", 
+    "publish_date": "2023-01-15",
+    "content": "Tangga nada adalah urutan nada-nada dalam satu oktaf yang disusun secara teratur. Setiap tangga nada memiliki pola interval yang unik dan menciptakan nuansa musik yang berbeda. Artikel ini akan membahas beberapa jenis tangga nada yang sering digunakan dalam musik, seperti tangga nada mayor, minor, pentatonik, blues, dan kromatik.                   ",
+    "tags": ["scale"],
+    "category": "music",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
+    "title": "menambhakan direktori bin npm ke PATH",
+    "path": "/path-global", 
+    "publish_date": "2023-01-15",
+    "content": "Ketika kamu menginstal paket global menggunakan npm, paket tersebut biasanya terinstal di direktori tertentu. Direktori ini perlu ditambahkan ke PATH agar perintah fnm bisa dikenali.",
+    "tags": ["path"],
+    "category": "windows",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
     "title": "vocabulary",
     "path": "/vocabulary", 
     "publish_date": "2023-01-15",
@@ -64,8 +104,8 @@ const data = [
     "path": "/unicode", 
     "publish_date": "2023-01-15",
     "content": "Dalam dunia pengembangan perangkat lunak, pengkodean karakter memainkan peran penting dalam memfasilitasi komunikasi antara sistem komputer yang berbeda.",
-    "tags": ["icon", "inspirasi", "riset",],
-    "category": "quotes",
+    "tags": ["icon"],
+    "category": "html",
     "created_at": "2023-01-01T10:00:00Z",
     "updated_at": "2023-01-15T12:00:00Z"
   },

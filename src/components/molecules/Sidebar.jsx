@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import SidebarItem from "../atoms/SidebarItem";
-import data from "../../db/db";  // Mengambil data dari db
+import data from "../../assets/databases";  // Mengambil data dari db
 
 function Sidebar() {
   const [activeItem, setActiveItem] = useState('');  // State untuk menyimpan item yang aktif

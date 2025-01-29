@@ -1,15 +1,18 @@
 import { Icon } from '@iconify/react';
+import Section from '../../atoms/Section';
+import H1 from '../../atoms/H1';
+import P from '../../atoms/P';
 
 const PenamaanCabangDiGit = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
+    <Section>
       {/* Judul Artikel */}
-      <h1 className="text-3xl font-semibold mb-6 text-center">Cara Penamaan Cabang di Git</h1>
+      <H1>Cara Penamaan Cabang di Git</H1>
 
       {/* Paragraf Pembuka */}
-      <p className="mb-4 text-lg">
+      <P className="text-lg">
         Penamaan cabang (branch) di Git adalah salah satu hal penting yang perlu diperhatikan dalam pengembangan perangkat lunak. Penamaan yang jelas dan konsisten akan memudahkan kolaborasi dalam tim serta membantu dalam melacak tujuan atau konteks dari perubahan yang sedang dikerjakan. Berikut adalah beberapa konvensi penamaan cabang yang sering digunakan dalam proyek perangkat lunak.
-      </p>
+      </P>
 
       {/* Subjudul dan Penjelasan */}
       <h2 className="text-2xl font-semibold mt-8 mb-4">1. Cabang Fitur</h2>
@@ -131,7 +134,7 @@ const PenamaanCabangDiGit = () => {
       <div className="text-center mt-8">
         <Icon icon="twemoji:package" className="text-4xl text-blue-500" />
       </div>
-    </div>
+    </Section>
   );
 };
 

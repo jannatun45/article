@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import FilosofiDibalikInspirasiReferencyDanRiset from '../components/pages/FilosofiDibalikInspirasiReferencyDanRiset.jsx';
 import FlexWrapPadaTailwind from '../components/pages/FlaxWrapPadaTailwind.jsx';
 import PerbedaanLocalStorageDanSessionStorage from '../components/pages/PerbedaanLocalStorageDanSessionStorage.jsx';
-import UnicodeArticle from "../components/pages/Unicode.jsx";
+import UnicodeArticle from "../components/pages/html/Unicode.jsx";
 import CaraBekerjaDenganCabangDiGit from "../components/pages/git/CreatingAndSwitchingBranchesToNewFeatures.jsx";
 import PenamaanCabangDiGit from "../components/pages/git/PenamaanCabangDiGit .jsx";
 import CategoryPage from "../components/pages/CategoryPage.jsx";
@@ -12,6 +12,10 @@ import SetupAndConfigurasi from "../components/pages/bootcamp/SetupAndConfiguras
 import GitBranchSwitching from "../components/pages/error/GitBranchSwitching.jsx";
 import AppExpress from "../components/atoms/AppExpress.jsx";
 import Vocabulary from "../components/pages/vocabulary/Vocabulary.jsx";
+import PathGlobal from "../components/pages/windows/PathGlobal.jsx";
+import MusicalScale from "../components/pages/music/MusicalScale.jsx";
+import HydrateFallbackInSSR from "../components/pages/react/HydrateFallbackInSSR.jsx";
+import Shortcut from "../components/pages/vscode/Shortcut.jsx";
 
 function RouterView() {
   const navigate = useNavigate();
@@ -32,7 +36,11 @@ function RouterView() {
       <Routes>
         <Route path='/' element={<AddArticle />} />
         <Route path='/penamaan-cabang-di-git' element={<PenamaanCabangDiGit />} />
+        <Route path='/shortcut' element={<Shortcut />} />
+        <Route path='/musical-scale' element={<MusicalScale />} />
+        <Route path='/hydrate-fallback-in-ssr' element={<HydrateFallbackInSSR />} />
         <Route path='/vocabulary' element={<Vocabulary />} />
+        <Route path='/path-global' element={<PathGlobal />} />
         <Route path='/git-branch-switching' element={<GitBranchSwitching />} />
         <Route path='/unicode' element={<UnicodeArticle />} />
         <Route path='/cara-bekerja-dengan-cabang-di-git' element={<CaraBekerjaDenganCabangDiGit />} />
