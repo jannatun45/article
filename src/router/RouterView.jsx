@@ -16,6 +16,7 @@ import PathGlobal from "../components/pages/windows/PathGlobal.jsx";
 import MusicalScale from "../components/pages/music/MusicalScale.jsx";
 import HydrateFallbackInSSR from "../components/pages/react/HydrateFallbackInSSR.jsx";
 import Shortcut from "../components/pages/vscode/Shortcut.jsx";
+import GitErrorExplanation from "../components/pages/git/GitErrorExplanation.jsx";
 
 function RouterView() {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ function RouterView() {
       <Routes>
         <Route path='/' element={<AddArticle />} />
         <Route path='/penamaan-cabang-di-git' element={<PenamaanCabangDiGit />} />
+        <Route path='/git-error-explanation' element={<GitErrorExplanation />} />
         <Route path='/shortcut' element={<Shortcut />} />
         <Route path='/musical-scale' element={<MusicalScale />} />
         <Route path='/hydrate-fallback-in-ssr' element={<HydrateFallbackInSSR />} />
