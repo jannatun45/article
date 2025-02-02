@@ -13,3 +13,13 @@ export default {
   },
   plugins: [],
 }
+
+// module.exports = {
+//   content: [
+//     "./src/**/*.{html,js,jsx,ts,tsx}", // sesuaikan dengan struktur project-mu
+//   ],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }

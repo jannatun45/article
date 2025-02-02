@@ -17,6 +17,7 @@ import MusicalScale from "../components/pages/music/MusicalScale.jsx";
 import HydrateFallbackInSSR from "../components/pages/react/HydrateFallbackInSSR.jsx";
 import Shortcut from "../components/pages/vscode/Shortcut.jsx";
 import GitErrorExplanation from "../components/pages/git/GitErrorExplanation.jsx";
+import Multer from "../components/pages/npm/Multer.jsx";
 
 function RouterView() {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ function RouterView() {
         <Route path='/' element={<AddArticle />} />
         <Route path='/penamaan-cabang-di-git' element={<PenamaanCabangDiGit />} />
         <Route path='/git-error-explanation' element={<GitErrorExplanation />} />
+        <Route path='/multer' element={<Multer />} />
         <Route path='/shortcut' element={<Shortcut />} />
         <Route path='/musical-scale' element={<MusicalScale />} />
         <Route path='/hydrate-fallback-in-ssr' element={<HydrateFallbackInSSR />} />

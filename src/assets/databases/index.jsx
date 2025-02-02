@@ -10,6 +10,16 @@ const data = [
     "updated_at": "2023-01-15T12:00:00Z"
   },
   {
+    "title": "multer",
+    "path": "/multer", 
+    "publish_date": "2023-01-15",
+    "content": "Tangga nada adalah urutan nada-nada dalam satu oktaf yang disusun secara teratur. Setiap tangga nada memiliki pola interval yang unik dan menciptakan nuansa musik yang berbeda. Artikel ini akan membahas beberapa jenis tangga nada yang sering digunakan dalam musik, seperti tangga nada mayor, minor, pentatonik, blues, dan kromatik.                   ",
+    "tags": ["multert"],
+    "category": "NPM",
+    "created_at": "2023-01-01T10:00:00Z",
+    "updated_at": "2023-01-15T12:00:00Z"
+  },
+  {
     "title": "cannot lock ref",
     "path": "/git-error-explanation", 
     "publish_date": "2023-01-15",
